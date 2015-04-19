@@ -14,7 +14,7 @@ In order to ignore the missing data, the "final" data frame is created from "df"
 ```r
 final <- df[complete.cases(df),]
 per_day <- aggregate(steps~date, data=final, sum)
-hist(per_day$steps, xlab="Total # daily steps")
+hist(per_day$steps, xlab="Total # daily steps", main="Histogram of Daily Steps")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
@@ -96,7 +96,7 @@ The mean and median are computed from the filled dataset.
 
 ```r
 per_day_filled <- aggregate(steps~date, data=df_filled, sum)
-hist(per_day_filled$steps)
+hist(per_day_filled$steps, xlab="Total # daily steps", main="Histogram of Daily Steps with filled missing data")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-9-1.png) 
